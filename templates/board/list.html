@@ -1,70 +1,71 @@
 {% extends 'layout/base.html' %}
 
+{% block title %}board/list{% endblock %}
 {% block style %}
-        /*페이지네이션 가운데 정렬 flex 사용 */
-        #pgnav {
-            /*border : 1px solid red;*/
-            display: flex; justify-content: center; align-items: baseline;
-        }
+/*페이지네이션 가운데 정렬 flex 사용 */
+#pgnav {
+    /*border : 1px solid red;*/
+    display: flex; justify-content: center; align-items: baseline;
+}
 
-        /* 페이지네이션의 페이지항목 간격 재조정 */
-        #pgnav li { margin-left: 10px }
+/* 페이지네이션의 페이지항목 간격 재조정 */
+#pgnav li { margin-left: 10px }
 
-        /*페이지네이션의 현재 페이지 스타일 지정*/
-        .cpage { font-weight: bold; font-size: 30px; color: red}
+/*페이지네이션의 현재 페이지 스타일 지정*/
+.cpage { font-weight: bold; font-size: 30px; color: red}
 
-                /* 게시판 목록 테이블 가운데 정렬 */
-        table { width: 60%; /*border: 1px solid black; */
-            margin: 35px auto -10px; table-layout: fixed;  border-collapse: collapse}
-        th, td { border: 1px solid black ;
-                padding: 10px; text-align: center; }
+        /* 게시판 목록 테이블 가운데 정렬 */
+table { width: 60%; /*border: 1px solid black; */
+    margin: 35px auto -10px; table-layout: fixed;  border-collapse: collapse}
+th, td { border: 1px solid black ;
+        padding: 10px; text-align: center; }
 
-        td:nth-child(2) { white-space: nowrap;
-                overflow: hidden; text-overflow: ellipsis }
-        td:nth-child(2) a:hover { color: crimson }
-        td:nth-child(2) a:active { color: crimson }
+td:nth-child(2) { white-space: nowrap;
+        overflow: hidden; text-overflow: ellipsis }
+td:nth-child(2) a:hover { color: crimson }
+td:nth-child(2) a:active { color: crimson }
 
-        .btns { text-align: right; border-top: none;
-                border-left: none; border-right: none }
+.btns { text-align: right; border-top: none;
+        border-left: none; border-right: none }
 
 {% endblock %}
 {% block content %}
-        <h2>게시판</h2>
-        <table >
-            <colgroup>
-                <col style="width: 10%">
-                <col style="">
-                <col style="width: 15%">
-                <col style="width: 15%">
-                <col style="width: 10%">
-            </colgroup>
-            <tr><td colspan="5" class="btns"><button type="button" onclick="location.href='write.html'">새글쓰기</button></td></tr>
-            <tr><th>번호</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회</th></tr>
-            <tr><td>1</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-            <tr><td>2</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-            <tr><td>3</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-            <tr><td>4</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-            <tr><td>5</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-            <tr><td>6</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-            <tr><td>7</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-            <tr><td>8</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-            <tr><td>9</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-            <tr><td>10</td><td><a href="view.html?bno=1">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
-                <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
-        </table>
-        <ul id="pgnav">
-            <li>이전</li>
-            <li class="cpage">1</li><li>2</li><li>3</li><li>4</li><li>5</li>
-            <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
-            <li>다음</li>
-        </ul>
+<h2>게시판</h2>
+<table >
+    <colgroup>
+        <col style="width: 10%">
+        <col style="">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 10%">
+    </colgroup>
+    <tr><td colspan="5" class="btns"><button type="button" onclick="location.href='/write'">새글쓰기</button></td></tr>
+    <tr><th>번호</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회</th></tr>
+    <tr><td>1</td><td><a href="/view">시간은 금이라구,친구! 시간은 금이라구,친구시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+    <tr><td>2</td><td><a href="/view">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+    <tr><td>3</td><td><a href="v/view">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+    <tr><td>4</td><td><a href="/view">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+    <tr><td>5</td><td><a href="/view">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+    <tr><td>6</td><td><a href="/view">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+    <tr><td>7</td><td><a href="/view">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+    <tr><td>8</td><td><a href="/view">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+    <tr><td>9</td><td><a href="/view">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+    <tr><td>10</td><td><a href="/view">시간은 금이라구,친구! 시간은 금이라구,친구 시간은 금이라구,친구! 시간은 금이라구,친구</a></td>
+        <td>siestageek</td><td>2014-05-05</td><td>777</td></tr>
+</table>
+<ul id="pgnav">
+    <li>이전</li>
+    <li class="cpage">1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+    <li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
+    <li>다음</li>
+</ul>
 {% endblock %}
