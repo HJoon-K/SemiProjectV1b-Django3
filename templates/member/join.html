@@ -1,0 +1,43 @@
+{% extends 'layout/base.html' %}
+
+{% block style %}
+        h2 { margin-top: 30px;}
+
+        /* 로그인 폼 배치하기 */
+        form { /* border: 1px solid red; */ width: 365px;
+            margin: 120px auto 170px }
+
+        /* 입력 필드 위아래 간격 */
+        form div { margin-top: 10px }
+
+        /* 회원가입 폼 라벨에 너비 설정*/
+        /* display - 인라인 요소를 블록요소로 변환 */
+        form label { display: inline-block; width: 120px;
+                    text-align: right; font-weight: bold;}
+
+        /* form의 버튼 위치 설정*/
+        form button:first-child { margin-left: 125px }
+{% endblock %}
+{% block content %}
+        <h2>회원가입</h2>
+        <form name="joinfrm"  method="post" action="join.do">
+            <div><label for="userid">아이디</label>
+                <input type="text" name="userid" id="userid" size="16" maxlength="16"></div>
+
+            <div><label for="passwd">비밀번호</label>
+                <input type="password" name="passwd" id="passwd" size="16" maxlength="16"></div>
+
+            <div><label for="passwd2">비밀번호 확인</label>
+                <input type="password" name="passwd2" id="passwd2" size="16" maxlength="16"></div>
+
+            <div><label for="name">이름</label>
+                <input type="text" name="name" id="name" size="16" maxlength="16"></div>
+
+            <div><label for="email">이메일</label>
+                <input type="text" name="email" id="email" size="26"></div>
+
+            <div><!-- label></label-->
+                <button type="submit">입력완료</button>
+                <button type="reset">다시입력</button></div>
+        </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+/* 메인 영역 크기 지정 */
+#main { height: auto ; min-height: 0px;}
+
+/* 링크관련 스타일시트 */
+a { font-weight: bold }
+a:link { color: black; text-decoration: none}
+a:visited { color: black; text-decoration: none}
+a:hover { color: orange; text-decoration: underline }
+a:active { color: orange; text-decoration: underline }
+
+/* 컨테츠 영역 너비 지정 및 정중앙 배치 */
+#wrap { width: 1250px; margin: 0 auto }
+
+/* 상단 로고 배치*/
+header h1 { margin-bottom: 45px;}
+
+/* 메뉴 수평배치 */
+ul { list-style: none; display: flex; justify-content: space-evenly }
+/*ul li { display: inline-block;  margin-left: 140px;}*/
+
+/* 저작권 문구 가운데 정렬렬*/
+footer span { display: block; text-align: center }

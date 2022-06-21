@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Python 웹프로젝트 v1</title>
+    <link rel="stylesheet" href="{% static '/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static '/css/webproject.css' %}">
+    <style>{% block style %} {% endblock %}</style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>Python 웹프로젝트 v1</h1>
+            <nav>
+                <ul>
+                    <li><a href="templates/index.html">Home</a> </li>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="list.html">게시판</a></li>
+                    <li><a href="myinfo.html">회원정보</a></li>
+                </ul>
+            </nav>
+            <hr>
+
+        </header>
+        <div id="main">
+        {% block content %} {% endblock %}
+        </div>
+        <footer >
+            <hr>
+            <span>copyright &copy; 2022. charles. All Rights Reserved.</span>
+        </footer>
+    </div>
+</body>
+</html>
