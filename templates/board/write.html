@@ -13,6 +13,9 @@ form label { display: inline-block;
 
 {% endblock %}
 {% block content %}
+{% if not request.session.userid %}
+<script>location.href='/list'</script>
+{% endif %}
 <h2>게시판 새글쓰기</h2>
 
 <form name="boradfrm" method="post">
