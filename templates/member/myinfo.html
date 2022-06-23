@@ -13,14 +13,22 @@ th, td { padding: 10px}
 th { text-align: right }
 
 {% endblock %}
+
 {% block content %}
+{#    만약 로그인이 안했다면 회원정보 페이지는 보여지면 안됨 #}
+{% if not request.session.userid %}
+<script>
+    alert('회원전용페이지입니다')
+    location.href='/login'
+</script>
+{% endif %}
 <h2>회원정보</h2>
 <form name="myinfofrm" method="post">
 <table>
-    <tr><th>아이디</th><td>charles</td></tr>
-    <tr><th>이름</th><td>kkkk</td></tr>
-    <tr><th>이메일</th><td>hjkim@naver.com</td></tr>
-    <tr><th>가입일</th><td>2022-05-27 12:17:36</td></tr>
+    <tr><th>아이디</th><td>{{ member.userid }}</td></tr>
+    <tr><th>이름</th><td>{{ member.name }}</td></tr>
+    <tr><th>이메일</th><td>{{ member.email }}</td></tr>
+    <tr><th>가입일</th><td>2{{ member.regdate }}</td></tr>
 </table>
 </form>
 {% endblock %}
