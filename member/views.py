@@ -26,7 +26,7 @@ def join(request):
             # 입력한 회원정보를 Member 객체에 담음
             member = Member(
                 userid=form['userid'],
-                passwd=make_password(form['passswd']),      # 비밀번호는 암호화
+                passwd=make_password(form['passwd']),      # 비밀번호는 암호화
                 name=form['name'], email=form['email']
             )
             # Member 객체에 담은 회원정보를 Member테이블에 저장
