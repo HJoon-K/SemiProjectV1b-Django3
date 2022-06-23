@@ -23,6 +23,9 @@ tr:nth-child(4) div {
 tr:nth-child(5) td { text-align: right }
 {% endblock %}
 {% block content %}
+{% if not request.session.userid %}
+<script>location.href='/list'</script>
+{% endif %}
 <h2>게시판 본문글</h2>
 <table>
     <tr><th>제 목</th>
