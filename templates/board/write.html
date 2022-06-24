@@ -33,7 +33,7 @@ form label { display: inline-block;
     <div><label></label>
         <button type="button" id="boardbtn">입력완료</button>
             <button type="reset">다시입력</button></div>
-    <input type="text" name="userid" value="{{ request.session.userid_id }}">
+    <input type="hidden" name="memberid" value="{{ request.session.userid_id }}">
 </form>
 {% endblock %}
 {% block jscript %}
