@@ -13,26 +13,46 @@ form label { display: inline-block;
 
 {% endblock %}
 {% block content %}
-{% if not request.session.userid %}
-<script>location.href='/list'</script>
-{% endif %}
+{#{% if not request.session.userid %}#}
+{#<script>location.href='/list'</script>#}
+{#{% endif %}#}
 <h2>게시판 새글쓰기</h2>
 
-<form name="boradfrm" method="post">
-
+<form name="boardfrm" id="boardfrm" method="post">
+    {% csrf_token %}
     <div><label for="title">제  목</label>
         <input type="text" name="title" id="title"></div>
 
     <div><label>작성자</label>
-        <span>charles</span></div>
+        <span>kkk333</span></div>
 
     <div><label for="contents" class="dragup">본  문</label>
         <textarea name="contents" id="contents" rows="10" cols="80"
                   style="resize: none"></textarea></div>
 
     <div><label></label>
-        <button type="submit">입력완료</button>
+        <button type="button" id="boardbtn">입력완료</button>
             <button type="reset">다시입력</button></div>
+    <input type="text" name="userid" value="{{ request.session.userid_id }}">
 </form>
 {% endblock %}
-{% block jscript %} {% endblock %}
+{% block jscript %}
+<script>
+    const boardbtn = document.querySelector('#boardbtn')
+    boardbtn.addEventListener('click', () => {
+        const title = document.boardfrm.title;
+        const contents = document.boardfrm.contents;
+        if (title.value == '') {
+            alert('제목을 작성하세요');
+            title.focus();
+            return;
+        } else if (contents.value == '') {
+            alert('분문을 작성하세요');
+            contents.focus();
+            return;
+        } else {
+            document.boardfrm.submit();
+        }
+    })
+</script>
+{% endblock %}
